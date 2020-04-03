@@ -62,19 +62,19 @@ const Card = ({
         {cardStartDate < cardEndDate ? (
           <Fragment>
             <p>
-              From: {cardStartDateString}<br></br>
-              to {cardEndDateString}
+              <strong>From:</strong> {cardStartDateString}<br></br>
+              <strong>to:</strong> {cardEndDateString}<br></br>
+              <strong>in:</strong> {cardCity}, {cardCountry}
             </p>
           </Fragment>
         ) : (
           <Fragment>
-            <p>Date: {cardStartDateString}</p>
+            <p>
+              <strong>Date:</strong> {cardStartDateString}<br></br>
+              <strong>in:</strong> {cardCity}, {cardCountry}
+            </p>
           </Fragment>
         )}
-
-        <p>
-          {cardCity}, {cardCountry}
-        </p>
       </CardBody>
     </Link>
   </Article>
