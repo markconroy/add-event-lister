@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => (
     <SEO title="Free Developer Events" />
     <h1>addEventLister</h1>
     <p>{data.allMarkdownRemark.edges.length} Upcoming Developer Events</p>
-    <p>Click an event title for more information.</p>
+    <p>Click an event for more information.</p>
     <GridContainer>
       {data.allMarkdownRemark.edges.map(edge => (
         <Fragment>

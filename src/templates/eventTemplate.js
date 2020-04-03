@@ -8,17 +8,12 @@ export default function Template({data}) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <SEO title="Mark Conroy Strava Activities" />
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.start_date_as_string}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
-      </div>
+      <SEO 
+        title={frontmatter.title}
+      />
+      <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.start_date_as_string}</h2>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
       <Link to="/">Home</Link>
     </Layout>
   )
@@ -34,6 +29,7 @@ export const conferencePageQuery = graphql`
         end_date_as_string: end_date(formatString: "Do MMM YYYY")
         title
       }
+      excerpt
     }
   }
 `
