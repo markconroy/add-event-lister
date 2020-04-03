@@ -3,27 +3,41 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const Article = styled.article`
-  border-left: .5rem solid #333;
+  border-left: 4px solid #f11;
+  border-top: 4px solid #f11;
   width: 100%;
-  background-color: #333;
-  box-shadow: .5rem .5rem 0px 0px #333;
+  box-shadow: 
+    4px 4px 0px 0px #fff,
+    8px 8px 0px 0px #f11
+  ;
+  &:focus-within,
+  &:hover {
+    background-color: #f11;
+  }
   a {
     display: block;
     height: 100%;
-    color: white;
+    color: black;
     text-decoration: none;
+  }
+  a:focus {
+    outline: 4px dashed #f11;
+  }
+  a:focus,
+  a:hover {
+    color: white;
   }
   a:focus h2,
   a:hover h2 {
     text-decoration: underline;
+    color: white;
   }
 `
 
 const CardHeading = styled.h2`
   margin-bottom: 0;
-  padding: 0.5rem 1rem;
-  background: #333;
-  color: white;
+  padding: .5rem 1rem 0;
+  color: #f11;
 `
 
 const CardBody = styled.div`
