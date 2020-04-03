@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => (
       {data.allMarkdownRemark.edges.map(edge => (
         <Fragment>
           <GridItem>
-            <Card 
+            <Card
               cardTitle = {edge.node.frontmatter.title}
               cardPath = {edge.node.frontmatter.path}
               cardCountry = {edge.node.frontmatter.country}
@@ -48,8 +48,7 @@ const IndexPage = ({ data }) => (
               cardEndDate = {edge.node.frontmatter.end_date}
               cardStartDateString = {edge.node.frontmatter.start_date_as_string}
               cardEndDateString = {edge.node.frontmatter.end_date_as_string}
-            >
-            </Card>
+            />
           </GridItem>
         </Fragment>
       ))}
