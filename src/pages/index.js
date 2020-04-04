@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
 import styled from "styled-components"
+import StyledHeading from "../components/global-styles/headings.js"
 
 const GridContainer = styled.ul`
   margin: 3rem -1rem;
@@ -31,10 +32,14 @@ const GridItem = styled.li`
 
 const IndexPage = ({ data }) => (
   <Layout>
+    
     <SEO title="Free Developer Events" />
-    <h1>addEventLister</h1>
+
+    <StyledHeading h1>Free Developer Events</StyledHeading>
+
     <p>{data.allMarkdownRemark.edges.length} Upcoming Developer Events</p>
     <p>Click an event for more information.</p>
+    
     <GridContainer>
       {data.allMarkdownRemark.edges.map(edge => (
         <Fragment>
@@ -53,7 +58,9 @@ const IndexPage = ({ data }) => (
         </Fragment>
       ))}
     </GridContainer>
+
     <Link to="/">Home</Link>
+
   </Layout>
 )
 

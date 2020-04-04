@@ -2,15 +2,8 @@ import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "styled-components"
-
-const PageTitle = styled.h1`
-  padding: 1rem;
-  margin-bottom: 0;
-  max-width: 500px;
-  background-color: #f11;
-  color: white;
-`
+import styled, { css } from "styled-components"
+import StyledHeading from "../components/global-styles/headings.js"
 
 const EventMeta = styled.div`
   padding: 1rem;
@@ -28,15 +21,15 @@ export default function EventTemplate({data}) {
         title={frontmatter.title}
       />
       <article>
-        <PageTitle>{frontmatter.title}</PageTitle>
+        
+        <StyledHeading reversed hasMetaData>{frontmatter.title}</StyledHeading>
+
         <EventMeta>
           {frontmatter.start_date < frontmatter.end_date ? (
             <Fragment>
-              <p style={{
-                marginBottom: `0`,
-              }}>
-                From: {frontmatter.start_date_as_string}<br></br>
-                to: {frontmatter.end_date_as_string}<br></br>
+              <p>
+                From: <time datetime={frontmatter.start_date}>{frontmatter.start_date_as_string}</time><br></br>
+                to: <time datetime={frontmatter.end_date}>{frontmatter.end_date_as_string}</time><br></br>
                 in: {frontmatter.city}, {frontmatter.country}<br></br>
                 Website: <a href={frontmatter.website_address}>{frontmatter.website_name}</a>
               </p>
@@ -44,7 +37,7 @@ export default function EventTemplate({data}) {
           ) : (
             <Fragment>
               <p>
-                Date: {frontmatter.start_date_as_string}<br></br>
+                Date: <time datetime={frontmatter.start_date}></time>{frontmatter.start_date_as_string}<time></time><br></br>
                 in: {frontmatter.city}, {frontmatter.country}<br></br>
                 Website: <a href={frontmatter.website_address}>{frontmatter.website_name}</a>
               </p>
@@ -59,7 +52,7 @@ export default function EventTemplate({data}) {
   )
 }
 
-export const conferencePageQuery = graphql`
+export const eventPageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
