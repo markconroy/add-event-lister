@@ -59,8 +59,6 @@ const IndexPage = ({ data }) => (
       ))}
     </GridContainer>
 
-    <Link to="/">Home</Link>
-
   </Layout>
 )
 

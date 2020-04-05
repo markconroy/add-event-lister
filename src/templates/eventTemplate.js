@@ -47,7 +47,6 @@ export default function EventTemplate({data}) {
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
       
-      <Link to="/">Home</Link>
     </Layout>
   )
 }

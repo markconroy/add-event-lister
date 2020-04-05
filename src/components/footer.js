@@ -4,9 +4,14 @@ import React from "react"
 
 const Footer = () => (
   <footer>
-    © {new Date().getFullYear()}, Built with
-    {` `}
-    <a href="https://www.gatsbyjs.org">Gatsby</a> by <a href="https://mark.ie">Mark Conroy</a>
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+      </ul>
+    </nav>
+    <p>
+      © {new Date().getFullYear()}, Built by <a href="https://mark.ie">Mark Conroy</a>, using <a href="https://www.gatsbyjs.org">Gatsby</a>.
+    </p>
   </footer>
 )
 
