@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const countries = result.data.countriesRemark.group
   countries.forEach(country => {
     createPage({
-      path: `/countries/${_.kebabCase(country.fieldValue)}/`,
+      path: `/countries/${_.kebabCase(country.fieldValue)}`,
       component: countryPageTemplate,
       context: {
         country: country.fieldValue,
