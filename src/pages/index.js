@@ -1,34 +1,11 @@
 import React, { Fragment } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
-import styled from "styled-components"
 import StyledHeading from "../components/global-styles/headings.js"
-
-const GridContainer = styled.ul`
-  margin: 3rem -1rem;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 0;
-  flex-wrap: wrap;
-  padding: 0;
-`
-
-const GridItem = styled.li`
-  display: flex;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  list-style: none;
-  width: 100%;
-  margin-bottom: 2rem;
-  @media screen and (min-width: 414px) {
-    width: calc(50% - 2rem);
-  }
-  @media screen and (min-width: 768px) {
-    width: calc(100% / 3 - 2rem);
-  }
-`
+import GridContainer from "../components/global-styles/grid-container.js"
+import GridItem from "../components/global-styles/grid-item.js"
 
 const IndexPage = ({ data }) => (
   <Layout>
