@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 const GridContainer = styled.ul`
   margin: 3rem -1rem;
