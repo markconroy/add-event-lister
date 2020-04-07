@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 // <StyledHeading as="h2">Heading Text Here</StyledHeading>
 
 const StyledHeading = styled.h1`
-  color: #f11;
+  color: #b30;
   ${props => props.h1 && css `
     padding-top: 1rem;
   `}
@@ -14,7 +14,7 @@ const StyledHeading = styled.h1`
   `}
   ${props => props.reversed && css`
     color: white;
-    background-color: #f11;
+    background-color: #b30;
     padding: 1rem;
   `}
 `

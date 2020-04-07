@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledFooter = styled.footer`
-  border-top: 3px solid #f11;
+  border-top: 3px solid #b30;
   ul {
     display: flex;
     margin: 0;

@@ -10,7 +10,7 @@ const EventMeta = styled.div`
   padding: 1rem;
   margin-bottom: 1.5rem;
   max-width: 500px;
-  border: 3px solid #f11;
+  border: 3px solid #b30;
 `
 
 export default function EventTemplate({data}) {
