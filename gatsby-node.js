@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const eventPageTemplate = path.resolve(`src/templates/eventTemplate.js`)
   const countryPageTemplate = path.resolve("src/templates/countryTemplate.js")
+  const cityPageTemplate = path.resolve("src/templates/cityTemplate.js")
 
   const result = await graphql(`
     {
@@ -28,6 +29,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
       countriesRemark: allMarkdownRemark {
         group(field: frontmatter___country) {
+          fieldValue
+        }
+      }
+      citiesRemark: allMarkdownRemark {
+        group(field: frontmatter___city) {
           fieldValue
         }
       }
@@ -56,6 +62,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: countryPageTemplate,
       context: {
         country: country.fieldValue,
+      },
+    })
+  })
+
+  const cities = result.data.citiesRemark.group
+  cities.forEach(city => {
+    createPage({
+      path: `/cities/${_.kebabCase(city.fieldValue)}`,
+      component: cityPageTemplate,
+      context: {
+        city: city.fieldValue,
       },
     })
   })
