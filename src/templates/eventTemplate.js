@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
@@ -30,7 +31,7 @@ export default function EventTemplate({data}) {
               <p>
                 From: <time datetime={frontmatter.start_date}>{frontmatter.start_date_as_string}</time><br></br>
                 to: <time datetime={frontmatter.end_date}>{frontmatter.end_date_as_string}</time><br></br>
-                in: {frontmatter.city}, {frontmatter.country}<br></br>
+                <Link to={`/cities/${kebabCase(frontmatter.city)}`}>{frontmatter.city}</Link>, <Link to={`/countries/${kebabCase(frontmatter.country)}`}>{frontmatter.country}</Link><br />
                 Website: <a href={frontmatter.website_address}>{frontmatter.website_name}</a>
               </p>
             </Fragment>
@@ -38,7 +39,8 @@ export default function EventTemplate({data}) {
             <Fragment>
               <p>
                 Date: <time datetime={frontmatter.start_date}></time>{frontmatter.start_date_as_string}<time></time><br></br>
-                in: {frontmatter.city}, {frontmatter.country}<br></br>
+                in: 
+                  <Link to={`/cities/${kebabCase(frontmatter.city)}`}>{frontmatter.city}</Link>, <Link to={`/countries/${kebabCase(frontmatter.country)}`}>{frontmatter.country}</Link><br />
                 Website: <a href={frontmatter.website_address}>{frontmatter.website_name}</a>
               </p>
             </Fragment>

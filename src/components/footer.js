@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledFooter = styled.footer`
@@ -18,7 +18,7 @@ const StyledFooter = styled.footer`
     padding: 1.5rem 1rem;
   }
 `
-const Footer = ({ }) => (
+const Footer = () => (
   <StyledFooter>
     <div className="footer__inner">
       <nav>
