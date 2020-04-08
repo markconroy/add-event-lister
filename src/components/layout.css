@@ -43,7 +43,7 @@ a {
   transition: 
     background-color .3s,
     color .3s;
-  color: #b30;
+  color: var(--primary);
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }

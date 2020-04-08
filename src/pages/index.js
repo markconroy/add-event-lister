@@ -6,7 +6,6 @@ import StyledHeading from "../components/global-styles/headings.js"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    
     <SEO title="Free Developer Events" />
 
     <StyledHeading h1>Free Developer Events</StyledHeading>
