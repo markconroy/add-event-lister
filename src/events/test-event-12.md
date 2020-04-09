@@ -1,6 +1,5 @@
 ---
 title: "Docker for Mac, Germany"
-path: "/events/conf-12"
 start_date: "2020-08-01"
 end_date: "2020-08-03"
 country: Germany

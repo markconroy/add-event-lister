@@ -1,6 +1,5 @@
 ---
 title: "Drupal Meetup June 2020 - Creating an enterprise level editorial experience in Drupal 8"
-path: "/events/conf-7"
 start_date: "2020-06-01"
 country: Ireland
 city: Dublin

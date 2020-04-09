@@ -1,6 +1,5 @@
 ---
 title: "Docker for Mac, Ireland"
-path: "/events/conf-11"
 start_date: "2020-08-01"
 end_date: "2020-08-03"
 country: Ireland

@@ -1,6 +1,5 @@
 ---
 title: "Docker for Mac, France"
-path: "/events/conf-13"
 start_date: "2020-08-01"
 end_date: "2020-08-03"
 country: France
