@@ -6,6 +6,7 @@ import kebabCase from "lodash/kebabCase"
 
 // Components
 import { Link, graphql } from "gatsby"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import StyledHeading from "../components/global-styles/headings.js"
 
@@ -15,8 +16,11 @@ const CitiesPage = ({
   },
 }) => (
     <Layout>
+      <SEO 
+        title="Events by City"
+      />
 
-    <StyledHeading h1 reversed>Cities</StyledHeading>
+    <StyledHeading h1>Cities</StyledHeading>
       <ul>
         {group.map(city => (
           <li key={city.fieldValue}>

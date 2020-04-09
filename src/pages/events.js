@@ -13,11 +13,10 @@ import GridItem from "../components/global-styles/grid-item.js"
 const EventsPage = ({ data }) => (
   <Layout>
     
-    <SEO title="Free Developer Events" />
+    <SEO />
 
-    <StyledHeading h1>Free Developer Events</StyledHeading>
+    <StyledHeading h1>{data.allMarkdownRemark.edges.length} {data.site.siteMetadata.subtitle}</StyledHeading>
 
-    <p>{data.allMarkdownRemark.edges.length} Upcoming Developer Events</p>
     <p>Click an event for more information.</p>
     
     <GridContainer>
@@ -64,6 +63,12 @@ export const EventsPageQuery = graphql`
           }
           excerpt
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        subtitle
       }
     }
   }

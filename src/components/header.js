@@ -15,19 +15,13 @@ const Header = ({ siteTitle }) => (
         padding: `1.5rem 1rem`,
       }}
     >
-      <h1 style={{ 
+      <p style={{ 
         margin: `0`,
         }}>
-        <Link
-          to="/"
-          style={{
-            color: `var(--primary)`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+        <Link to="/">
+          addEventLister
         </Link>
-      </h1>
+      </p>
     </div>
   </header>
 )
