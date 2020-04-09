@@ -14,6 +14,7 @@ const EventMeta = styled.div`
 `
 
 export default function EventTemplate({data}) {
+  
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
@@ -54,21 +55,20 @@ export default function EventTemplate({data}) {
 }
 
 export const eventPageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        title
-        path
-        start_date
+        city
+        country
         end_date
+        start_date
         path_date: start_date(formatString: "YYYY-MM-DD")
         start_date_as_string: start_date(formatString: "Do MMM YYYY")
         end_date_as_string: end_date(formatString: "Do MMM YYYY")
-        country
-        city
-        website_name
+        title
         website_address
+        website_name
       }
     }
   }

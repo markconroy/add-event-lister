@@ -7,6 +7,18 @@
 const path = require(`path`)
 const _ = require("lodash")
 
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = `${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
@@ -23,6 +35,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
+              start_date
+              country
+              city
+              title
+            }
+            fields {
+              slug
             }
           }
         }
@@ -49,9 +68,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const events = result.data.eventsRemark.edges
   events.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.path,
+      path: node.fields.slug,
       component: eventPageTemplate,
-      context: {},
+      context: {
+        slug: node.fields.slug
+      },
     })
   })
 
