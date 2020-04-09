@@ -7,7 +7,7 @@ import StyledHeading from "../components/global-styles/headings.js"
 const IndexPage = ({ data, title }) => (
   <Layout>
     <SEO 
-      title="Welcome"
+      title={`${data.allMarkdownRemark.edges.length} Events`}
     />
 
     <StyledHeading h1>Free Developer Events</StyledHeading>
