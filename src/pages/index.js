@@ -4,9 +4,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledHeading from "../components/global-styles/headings.js"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, title }) => (
   <Layout>
-    <SEO />
+    <SEO 
+      title="Welcome"
+    />
 
     <StyledHeading h1>Free Developer Events</StyledHeading>
 
@@ -40,6 +42,12 @@ export const IndexPageQuery = graphql`
       }
       countriesGroup: group(field: frontmatter___country) {
         totalCount
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        subtitle
       }
     }
   }
