@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import _ from "lodash"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Card from "../components/card"
 import StyledHeading from "../components/global-styles/headings.js"
@@ -11,14 +12,18 @@ import GridItem from "../components/global-styles/grid-item.js"
 const Countries = ({ pageContext, data }) => {
   const { country } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const countryHeader = `${totalCount} event${
+  const countryHeader = `${totalCount} Event${
     totalCount === 1 ? "" : "s"
   } in ${country}`
 
   return (
     <Layout>
 
-      <StyledHeading h1 reversed hasMetaData>{countryHeader}</StyledHeading>
+      <SEO
+        title = {`${countryHeader}`}
+      />
+
+      <StyledHeading h1>{countryHeader}</StyledHeading>
       <GridContainer>
         {edges.map(({ node }) => {
           return (

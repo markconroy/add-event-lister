@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import _ from "lodash"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Card from "../components/card"
 import StyledHeading from "../components/global-styles/headings.js"
@@ -18,7 +19,12 @@ const Cities = ({ pageContext, data }) => {
   return (
     <Layout>
 
-      <StyledHeading h1 reversed hasMetaData>{cityHeader}</StyledHeading>
+      <SEO
+        title = {`Events in ${city}`}
+      />
+
+      <StyledHeading h1>{cityHeader}</StyledHeading>
+
       <GridContainer>
         {edges.map(({ node }) => {
           return (

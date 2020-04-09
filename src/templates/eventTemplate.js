@@ -20,7 +20,7 @@ export default function EventTemplate({data}) {
   return (
     <Layout>
       <SEO 
-        title={frontmatter.title}
+        title={`${frontmatter.title} in ${frontmatter.city}`}
       />
       <article>
         

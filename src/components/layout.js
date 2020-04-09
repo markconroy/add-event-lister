@@ -28,8 +28,11 @@ const Layout = ({ children }) => {
   return (
     
     <Fragment>
+      
       <GlobalCssVariables />
+      
       <Header siteTitle={data.site.siteMetadata.title} />
+      
       <div
         style={{
           margin: `0 auto`,
@@ -40,7 +43,9 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         
       </div>
+
       <Footer />
+    
     </Fragment>
   )
 }
