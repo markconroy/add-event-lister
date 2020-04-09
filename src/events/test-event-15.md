@@ -1,6 +1,5 @@
 ---
 title: "Modern Development for Government"
-path: "/events/conf-15"
 start_date: "2020-10-01"
 country: Ireland
 city: Dublin

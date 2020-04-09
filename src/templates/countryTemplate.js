@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
+import _ from "lodash"
 import Layout from "../components/layout"
 import Card from "../components/card"
 import StyledHeading from "../components/global-styles/headings.js"
@@ -12,7 +13,7 @@ const Countries = ({ pageContext, data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
   const countryHeader = `${totalCount} event${
     totalCount === 1 ? "" : "s"
-  } in "${country}"`
+  } in ${country}`
 
   return (
     <Layout>
@@ -21,17 +22,17 @@ const Countries = ({ pageContext, data }) => {
       <GridContainer>
         {edges.map(({ node }) => {
           return (
-            <GridItem key={node.frontmatter.path}>
+            <GridItem key={`${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`}>
               <Card
-              cardTitle = {node.frontmatter.title}
-              cardPath = {node.frontmatter.path}
-              cardCountry = {node.frontmatter.country}
-              cardCity = {node.frontmatter.city}
-              cardStartDate = {node.frontmatter.start_date}
-              cardEndDate = {node.frontmatter.end_date}
-              cardStartDateString = {node.frontmatter.start_date_as_string}
-              cardEndDateString = {node.frontmatter.end_date_as_string}
-            />
+                cardTitle = {node.frontmatter.title}
+                cardPath = {`${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`}
+                cardCountry = {node.frontmatter.country}
+                cardCity = {node.frontmatter.city}
+                cardStartDate = {node.frontmatter.start_date}
+                cardEndDate = {node.frontmatter.end_date}
+                cardStartDateString = {node.frontmatter.start_date_as_string}
+                cardEndDateString = {node.frontmatter.end_date_as_string}
+              />
             </GridItem>
           )
         })}
@@ -81,7 +82,6 @@ export const countryPageQuery = graphql`
             end_date_as_string: end_date(formatString: "Do MMMM YYYY")
             country
             city
-            path
           }
         }
       }

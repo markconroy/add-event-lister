@@ -1,6 +1,5 @@
 ---
 title: "Gatsby Con Europe"
-path: "/events/conf-10"
 start_date: "2020-09-01"
 end_date: "2020-10-01"
 country: Germany

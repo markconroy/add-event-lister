@@ -1,11 +1,14 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
+import _ from "lodash"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
 import StyledHeading from "../components/global-styles/headings.js"
 import GridContainer from "../components/global-styles/grid-container.js"
 import GridItem from "../components/global-styles/grid-item.js"
+
+// const _ = require("lodash")
 
 const EventsPage = ({ data }) => (
   <Layout>
@@ -23,7 +26,7 @@ const EventsPage = ({ data }) => (
           <GridItem>
             <Card
               cardTitle = {edge.node.frontmatter.title}
-              cardPath = {edge.node.frontmatter.path}
+              cardPath = {`${_.kebabCase(edge.node.frontmatter.start_date)}-${_.kebabCase(edge.node.frontmatter.country)}-${_.kebabCase(edge.node.frontmatter.city)}-${_.kebabCase(edge.node.frontmatter.title)}`}
               cardCountry = {edge.node.frontmatter.country}
               cardCity = {edge.node.frontmatter.city}
               cardStartDate = {edge.node.frontmatter.start_date}

@@ -55,7 +55,7 @@ const Card = ({
   cardEndDateString,
 }) => (
   <Article>
-    <Link to={`${cardPath}`}>
+    <Link key={`${cardPath}`} to={`${cardPath}`}>
       <CardHeading>{cardTitle}</CardHeading>
 
       <CardBody>

@@ -1,6 +1,5 @@
 ---
 title: "Drupal Meetup July 2020"
-path: "/events/conf-8"
 start_date: "2020-07-01"
 country: Ireland
 city: Dublin

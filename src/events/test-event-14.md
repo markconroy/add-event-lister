@@ -1,6 +1,5 @@
 ---
 title: "Modern Design for Government"
-path: "/events/conf-14"
 start_date: "2020-10-01"
 country: Ireland
 city: Dublin
