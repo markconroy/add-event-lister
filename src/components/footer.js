@@ -54,14 +54,14 @@ const Footer = () => (
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/events">{data.allMarkdownRemark.edges.length} Events</Link></li>
-            <li><Link to="/cities">{data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
-            <li><Link to="/countries">{data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
+            <li><Link to="/events/cities">{data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
+            <li><Link to="/events/countries">{data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
             <li><Link to="/events/online">Online Events</Link></li>
             <li><Link to="/events/physical">Physical Events</Link></li>
           </ul>
         </nav>
         <p>
-          © {new Date().getFullYear()}, Built by <a href="https://mark.ie">Mark Conroy</a>, using <a href="https://www.gatsbyjs.org">Gatsby</a>.
+          © {new Date().getFullYear()}, A project of <a href="https://annertech.com">Annertech</a>, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
         </p>
       </div>
     </StyledFooter>

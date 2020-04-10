@@ -16,8 +16,8 @@ const IndexPage = ({ data, title }) => (
     <p>Browse:
       <ul>
         <li><Link to="/events">{data.allMarkdownRemark.edges.length} upcoming events</Link></li>
-        <li><Link to="/cities">In {data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
-        <li><Link to="/countries">Across {data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
+        <li><Link to="/events/cities">In {data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
+        <li><Link to="/events/countries">Across {data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
         <li><Link to="/events/online">Online Events</Link></li>
         <li><Link to="/events/physical">Physical Events</Link></li>
       </ul>
