@@ -4,6 +4,7 @@ module.exports = {
     subtitle: `Free Developer Events`,
     description: `addEventLister is the place to see listing of free developer events worldwide`,
     author: `@markconroy`,
+    repo: `https://github.com/markconroy/here`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
