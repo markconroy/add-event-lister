@@ -22,7 +22,7 @@ const Footer = () => (
 
   <StaticQuery
     query={graphql`
-      query HeadingQuery {
+      query FooterQuery {
         allMarkdownRemark {
           edges {
             node {
@@ -49,25 +49,24 @@ const Footer = () => (
     `}
     render={data => (
       <StyledFooter>
-      <div className="footer__inner">
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/events">{data.allMarkdownRemark.edges.length} Events</Link></li>
-            <li><Link to="/events/cities">{data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
-            <li><Link to="/events/countries">{data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
-            <li><Link to="/events/online">Online Events</Link></li>
-            <li><Link to="/events/physical">Physical Events</Link></li>
-          </ul>
-        </nav>
-        <p>
-          © {new Date().getFullYear()}, A project of <a href="https://annertech.com">Annertech</a>, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
-        </p>
-      </div>
-    </StyledFooter>
-  )}
-/>
-
+        <div className="footer__inner">
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/events">{data.allMarkdownRemark.edges.length} Events</Link></li>
+              <li><Link to="/events/cities">{data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
+              <li><Link to="/events/countries">{data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
+              <li><Link to="/events/online">Online Events</Link></li>
+              <li><Link to="/events/physical">Physical Events</Link></li>
+            </ul>
+          </nav>
+          <p>
+            © {new Date().getFullYear()}, A project of <a href="https://annertech.com">Annertech</a>, built with <a href="https://www.gatsbyjs.org">Gatsby</a>.
+          </p>
+        </div>
+      </StyledFooter>
+    )}
+  />
 )
 
 export default Footer
