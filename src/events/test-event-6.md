@@ -1,5 +1,5 @@
 ---
-title: "Drupal Dublin Meetup"
+title: Drupal Dublin Meetup
 start_date: "2020-06-01"
 end_date: "2020-07-10"
 country: Ireland

@@ -1,5 +1,5 @@
 ---
-title: "APIs Now"
+title: APIs Now
 start_date: "2020-05-02"
 end_date: "2020-05-04"
 country: Germany

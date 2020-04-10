@@ -1,6 +1,6 @@
 ---
-title: "Drupal Camp Dublin 2020"
-path: "/events/conf-7"
+title: Drupal Camp Dublin 2020
+path: /events/conf-7
 start_date: "2020-04-09"
 country: Ireland
 city: Dublin

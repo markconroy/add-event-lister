@@ -1,5 +1,5 @@
 ---
-title: "JAMStack 2020"
+title: JAMStack 2020
 start_date: "2020-03-03"
 end_date: "2020-03-07"
 country: Ireland

@@ -1,5 +1,5 @@
 ---
-title: "Docker for Mac, Germany"
+title: Docker for Mac, Germany
 start_date: "2020-08-01"
 end_date: "2020-08-03"
 country: Germany
