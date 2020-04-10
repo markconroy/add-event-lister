@@ -13,8 +13,8 @@ The following format should be used: frontmatter, followed by content -
 title: Required - string
 start_date: Required - string in format "YYYY-MM-DD", e.g. "2020-02-28"
 end_date: Optional - string in format "YYYY-MM-DD", e.g. "2020-02-28"
-country: Ireland
-city: Dublin
+country: Optional - string
+city: Optional - string
 online: Boolean - true, false, or empty (which will equal false)
 website_name: Optional - string
 website_address: Optional - url
