@@ -1,5 +1,5 @@
 ---
-title: "Modern Development for Government"
+title: Modern Development for Government
 start_date: "2020-10-01"
 country: Ireland
 city: Dublin

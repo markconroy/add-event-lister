@@ -1,5 +1,5 @@
 ---
-title: "Gatsby Con Europe"
+title: Gatsby Con Europe
 start_date: "2020-09-01"
 end_date: "2020-10-01"
 country: Germany
