@@ -4,6 +4,7 @@ start_date: "2020-05-02"
 end_date: "2020-05-04"
 country: Germany
 city: Berlin
+online: true
 website_name: Markie
 website_address: https://mark.ie/contact
 ---

@@ -4,6 +4,7 @@ start_date: "2020-03-03"
 end_date: "2020-03-07"
 country: Ireland
 city: Galway
+online: true
 website_name: Markie
 website_address: https://mark.ie/blog
 ---

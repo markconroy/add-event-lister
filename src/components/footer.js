@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledFooter = styled.footer`
@@ -19,21 +19,55 @@ const StyledFooter = styled.footer`
   }
 `
 const Footer = () => (
-  <StyledFooter>
-    <div className="footer__inner">
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/events">All Events</Link></li>
-        <li><Link to="/countries">By Country</Link></li>
-        <li><Link to="/cities">By City</Link></li>
-        </ul>
-      </nav>
-      <p>
-        © {new Date().getFullYear()}, Built by <a href="https://mark.ie">Mark Conroy</a>, using <a href="https://www.gatsbyjs.org">Gatsby</a>.
-      </p>
-    </div>
-  </StyledFooter>
+
+  <StaticQuery
+    query={graphql`
+      query HeadingQuery {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                city
+                country
+              }
+            }
+          }
+          cityGroup: group(field: frontmatter___city) {
+            totalCount
+          }
+          countriesGroup: group(field: frontmatter___country) {
+            totalCount
+          }
+          onlineGroup: group(field: frontmatter___online) {
+            totalCount
+          }
+          physicalGroup: group(field: frontmatter___country) {
+            totalCount
+          }
+        }
+      }
+    `}
+    render={data => (
+      <StyledFooter>
+      <div className="footer__inner">
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/events">{data.allMarkdownRemark.edges.length} Events</Link></li>
+            <li><Link to="/cities">{data.allMarkdownRemark.cityGroup.length} Cities</Link></li>
+            <li><Link to="/countries">{data.allMarkdownRemark.countriesGroup.length} Countries</Link></li>
+            <li><Link to="/events/online">Online Events</Link></li>
+            <li><Link to="/events/physical">Physical Events</Link></li>
+          </ul>
+        </nav>
+        <p>
+          © {new Date().getFullYear()}, Built by <a href="https://mark.ie">Mark Conroy</a>, using <a href="https://www.gatsbyjs.org">Gatsby</a>.
+        </p>
+      </div>
+    </StyledFooter>
+  )}
+/>
+
 )
 
 export default Footer
