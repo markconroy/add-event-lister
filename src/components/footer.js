@@ -5,8 +5,11 @@ import styled from "styled-components"
 const StyledFooter = styled.footer`
   border-top: 3px solid var(--primary);
   ul {
-    display: flex;
     margin: 0;
+    @media screen and (min-width: 500px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   li {
     list-style: none;
