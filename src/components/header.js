@@ -9,12 +9,15 @@ const StyledHeader = styled.header`
   .header__inner {
     margin: 0 auto;
     max-width: 960px;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0;
     display: flex;
     justify-content: space-between;
     > * {
       flex-basis: 50%;
     }
+  }
+  .header__branding-logo {
+    margin-bottom: 1.5rem;
   }
   .header__link {
     text-decoration: none;
@@ -29,8 +32,13 @@ const StyledHeader = styled.header`
       color: var(--primary);
     }
   }
-  a {
-    /* display: block; */
+  .header__link--with-border {
+    border: 3px solid var(--primary);
+    border-bottom: 0;
+    &:focus,
+    &:hover {
+      /* border-color:  */
+    }
   }
   .header__support {
     padding-left: 1rem;
@@ -63,20 +71,22 @@ const Header = () => (
       <StyledHeader>
         <div className="header__inner">
           <div className="header__branding">
-            <p>
+            <div className="header__branding-logo">
               <Link className="header__link" to="/">
                 addEventLister
                 <br></br>
                 {data.site.siteMetadata.subtitle}
               </Link>
-            </p>
+            </div>
+            <div>
+              <a className="header__link header__link--with-border" href={data.site.siteMetadata.repo}>Add New Event</a>
+            </div>
           </div>
           <div className="header__support">
               <p>
                 A project of Annertech
                 <a href="https://annertech.com"><Img fluid={data.imageAnnertechLogo.childImageSharp.fluid} /></a>
               </p>
-            <a className="header__link" href={data.site.siteMetadata.repo}>Add Event</a>
           </div>
         </div>
       </StyledHeader>
