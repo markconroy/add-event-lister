@@ -4,6 +4,8 @@ This is the base repo for an addEventLister website.
 
 ---
 
+## <a name="add-your-event">Add Your Event</a>
+
 To add an event, just create a pull request against the `events` branch, by creating a markdown file with your event information in it.
 
 The following format should be used: frontmatter, followed by content -
