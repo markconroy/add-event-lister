@@ -26,7 +26,7 @@ const EventsPage = ({ data }) => (
           <GridItem>
             <Card
               cardTitle = {edge.node.frontmatter.title}
-              cardPath = {`${_.kebabCase(edge.node.frontmatter.start_date)}-${_.kebabCase(edge.node.frontmatter.country)}-${_.kebabCase(edge.node.frontmatter.city)}-${_.kebabCase(edge.node.frontmatter.title)}`}
+              cardPath = {`events/${_.kebabCase(edge.node.frontmatter.start_date)}-${_.kebabCase(edge.node.frontmatter.country)}-${_.kebabCase(edge.node.frontmatter.city)}-${_.kebabCase(edge.node.frontmatter.title)}`}
               cardCountry = {edge.node.frontmatter.country}
               cardCity = {edge.node.frontmatter.city}
               cardStartDate = {edge.node.frontmatter.start_date}

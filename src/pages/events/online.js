@@ -29,7 +29,7 @@ const OnlinePage = ({ data }) => {
             <GridItem key={`${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`}>
               <Card
                 cardTitle = {node.frontmatter.title}
-                cardPath = {`${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`}
+                cardPath = {`events/${_.kebabCase(node.frontmatter.start_date)}-${_.kebabCase(node.frontmatter.country)}-${_.kebabCase(node.frontmatter.city)}-${_.kebabCase(node.frontmatter.title)}`}
                 cardCountry = {node.frontmatter.country}
                 cardCity = {node.frontmatter.city}
                 cardStartDate = {node.frontmatter.start_date}
