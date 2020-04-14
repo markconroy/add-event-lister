@@ -19,12 +19,25 @@ export default function EventTemplate({data}) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
+      
       <SEO 
         title={`${frontmatter.title} in ${frontmatter.city}`}
+        description={`${frontmatter.title} is ${frontmatter.online ? "an online event" : ""}coming soon${frontmatter.city || frontmatter.country ? ` to ${frontmatter.city && frontmatter.country ? `${frontmatter.city}, ${frontmatter.country}.` : ""}${frontmatter.city && !(frontmatter.country) ? `${frontmatter.city}.` : ""}${frontmatter.country && !(frontmatter.city) ? `${frontmatter.country}.` : ""}` : "."}`}
       />
+
       <article>
         
         <StyledHeading reversed hasMetaData>{frontmatter.title}</StyledHeading>
+
+      {frontmatter.country ? (
+        <Fragment>
+          Hello {frontmatter.country}
+        </Fragment>
+      ) : (
+        <Fragment>
+          Goodbye
+        </Fragment>
+      )}
 
         <EventMeta>
           {frontmatter.start_date < frontmatter.end_date ? (
@@ -48,6 +61,7 @@ export default function EventTemplate({data}) {
           )}
         </EventMeta>
         <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Link to="/events/">All Events</Link>
       </article>
       
     </Layout>
@@ -69,6 +83,7 @@ export const eventPageQuery = graphql`
         title
         website_address
         website_name
+        online
       }
     }
   }

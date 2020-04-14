@@ -10,27 +10,28 @@ import SEO from "../../components/seo"
 import Layout from "../../components/layout"
 import StyledHeading from "../../components/global-styles/headings.js"
 
-const CountriesPage = ({
-  data: {
-    allMarkdownRemark: { group },
-  },
-}) => (
-    <Layout>
+const CountriesPage = ({ data: {
+  allMarkdownRemark: { group }, siteVariables }, }) => (
+  <Layout>
+
     <SEO 
       title="Events by Country"
+      description = {`View all ${siteVariables.childMarkdownRemark.frontmatter.site_title} by country`}
     />
 
     <StyledHeading h1>Countries</StyledHeading>
-      <ul>
-        {group.map(country => (
-          <li key={country.fieldValue}>
-            <Link to={`/countries/${kebabCase(country.fieldValue)}/`}>
-              {country.fieldValue} ({country.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Layout>
+
+    <ul>
+      {group.map(country => (
+        <li key={country.fieldValue}>
+          <Link to={`/countries/${kebabCase(country.fieldValue)}/`}>
+            {country.fieldValue} ({country.totalCount})
+          </Link>
+        </li>
+      ))}
+    </ul>
+
+  </Layout>
 )
 
 CountriesPage.propTypes = {
@@ -59,6 +60,18 @@ export const CountriesPageQuery = graphql`
       group(field: frontmatter___country) {
         fieldValue
         totalCount
+      }
+    }
+    siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+      dir
+      childMarkdownRemark {
+        frontmatter {
+          site_title
+          site_subtitle
+          site_description
+          site_author
+          site_repo
+        }
       }
     }
   }

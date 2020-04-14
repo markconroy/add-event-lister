@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledHeading from "../components/global-styles/headings.js"
 
-const IndexPage = ({ data, title }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO 
       title={`${data.allMarkdownRemark.edges.length} Events`}

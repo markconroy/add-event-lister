@@ -11,15 +11,14 @@ import GridItem from "../../components/global-styles/grid-item.js"
 
 const PhysicalPage = ({ data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
-  const physicalEventsHeader = `${totalCount} Physical event${
-    totalCount === 1 ? "" : "s"
-  }`
+  const physicalEventsHeader = `${totalCount} Physical event${totalCount === 1 ? "" : "s"}`
 
   return (
     <Layout>
 
       <SEO
         title = "Physical Events"
+        description = {`View all physical ${data.siteVariables.childMarkdownRemark.frontmatter.site_subtitle}`}
       />
 
       <StyledHeading h1>{physicalEventsHeader}</StyledHeading>
@@ -87,6 +86,18 @@ export const PhysicalPageQuery = graphql`
             country
             online
           }
+        }
+      }
+    }
+    siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+      dir
+      childMarkdownRemark {
+        frontmatter {
+          site_title
+          site_subtitle
+          site_description
+          site_author
+          site_repo
         }
       }
     }

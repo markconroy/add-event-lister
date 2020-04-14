@@ -8,14 +8,15 @@ import StyledHeading from "../components/global-styles/headings.js"
 import GridContainer from "../components/global-styles/grid-container.js"
 import GridItem from "../components/global-styles/grid-item.js"
 
-// const _ = require("lodash")
-
 const EventsPage = ({ data }) => (
   <Layout>
     
-    <SEO />
+    <SEO 
+      title="All Events"
+      description = {`View all ${data.siteVariables.childMarkdownRemark.frontmatter.site_subtitle} from ${data.siteVariables.childMarkdownRemark.frontmatter.site_title}`}
+    />
 
-    <StyledHeading h1>{data.allMarkdownRemark.edges.length} {data.site.siteMetadata.subtitle}</StyledHeading>
+    <StyledHeading h1>{data.allMarkdownRemark.edges.length} {data.siteVariables.childMarkdownRemark.frontmatter.site_subtitle}</StyledHeading>
 
     <p>Click an event for more information.</p>
     
@@ -65,10 +66,16 @@ export const EventsPageQuery = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-        subtitle
+    siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+      dir
+      childMarkdownRemark {
+        frontmatter {
+          site_title
+          site_subtitle
+          site_description
+          site_author
+          site_repo
+        }
       }
     }
   }

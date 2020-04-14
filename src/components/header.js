@@ -65,6 +65,18 @@ const Header = () => (
             }
           }
         }
+        siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+          dir
+          childMarkdownRemark {
+            frontmatter {
+              site_title
+              site_subtitle
+              site_description
+              site_author
+              site_repo
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -75,11 +87,11 @@ const Header = () => (
               <Link className="header__link" to="/">
                 addEventLister
                 <br></br>
-                {data.site.siteMetadata.subtitle}
+                {data.siteVariables.childMarkdownRemark.frontmatter.sub_title}
               </Link>
             </div>
             <div>
-              <a className="header__link header__link--with-border" href={data.site.siteMetadata.repo}>Add New Event</a>
+              <a className="header__link header__link--with-border" href={`${data.siteVariables.childMarkdownRemark.frontmatter.site_repo}#add-your-event`}>Add New Event</a>
             </div>
           </div>
           <div className="header__support">

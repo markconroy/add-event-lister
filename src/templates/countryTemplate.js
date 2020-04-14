@@ -20,7 +20,8 @@ const Countries = ({ pageContext, data }) => {
     <Layout>
 
       <SEO
-        title = {`${countryHeader}`}
+        title = {`${data.siteVariables.childMarkdownRemark.frontmatter.site_subtitle} in ${country}`}
+        description = {`View the complete list of upcoming ${data.siteVariables.childMarkdownRemark.frontmatter.site_subtitle} in ${country}`}
       />
 
       <StyledHeading h1>{countryHeader}</StyledHeading>
@@ -43,7 +44,7 @@ const Countries = ({ pageContext, data }) => {
         })}
       </GridContainer>
     
-      <Link to="/countries">All countries</Link>
+      <Link to="/events/countries">All countries</Link>
     </Layout>
   )
 }
@@ -88,6 +89,18 @@ export const countryPageQuery = graphql`
             country
             city
           }
+        }
+      }
+    }
+    siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+      dir
+      childMarkdownRemark {
+        frontmatter {
+          site_title
+          site_subtitle
+          site_description
+          site_author
+          site_repo
         }
       }
     }

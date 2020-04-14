@@ -2,7 +2,6 @@
 title: Gatsby Con Europe
 start_date: "2020-09-01"
 end_date: "2020-10-01"
-country: Germany
 city: Hamburg
 website_name: Gatsby
 website_address: https://gatsbyjs.org
