@@ -29,16 +29,6 @@ export default function EventTemplate({data}) {
         
         <StyledHeading reversed hasMetaData>{frontmatter.title}</StyledHeading>
 
-      {frontmatter.country ? (
-        <Fragment>
-          Hello {frontmatter.country}
-        </Fragment>
-      ) : (
-        <Fragment>
-          Goodbye
-        </Fragment>
-      )}
-
         <EventMeta>
           {frontmatter.start_date < frontmatter.end_date ? (
             <Fragment>
