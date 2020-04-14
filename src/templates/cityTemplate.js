@@ -93,7 +93,7 @@ export const cityPageQuery = graphql`
         }
       }
     }
-    siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+    siteVariables: file(dir: {regex: "/(site-variables)/"}, name: {eq: "site-variables"}) {
       dir
       childMarkdownRemark {
         frontmatter {

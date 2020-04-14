@@ -14,7 +14,7 @@ function SEO({ description, lang, meta, title, subtitle }) {
   const { siteVariables } = useStaticQuery(
     graphql`
       query {
-        siteVariables: file(dir: {regex: "/(site-variables)/"}) {
+        siteVariables: file(dir: {regex: "/(site-variables)/"}, name: {eq: "site-variables"}) {
           dir
           childMarkdownRemark {
             frontmatter {
