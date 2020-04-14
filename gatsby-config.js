@@ -19,7 +19,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `events`,
-        path: `${__dirname}/src/events`,
+        path: `${__dirname}/src/data/events`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `websiteVariables`,
+        path: `${__dirname}/src/data/site-variables`,
       },
     },
     `gatsby-transformer-remark`,

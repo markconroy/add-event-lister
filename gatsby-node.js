@@ -29,8 +29,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       eventsRemark: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___start_date] }
-      ) {
+        filter: {fileAbsolutePath: {regex: "/(data/events)/"}}, 
+        sort: {order: DESC, fields: [frontmatter___start_date]}) {
         edges {
           node {
             frontmatter {
