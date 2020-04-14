@@ -47,8 +47,16 @@ export default EventsPage
 export const EventsPageQuery = graphql`
   {
     allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___start_date] }
-      ) {
+      sort: { 
+        order: ASC, 
+        fields: [frontmatter___start_date]
+      }, 
+      filter: { 
+        fileAbsolutePath: {
+          regex: "/(data/events)/"
+        } 
+      }
+    ) {
       edges {
         node {
           frontmatter {
@@ -60,7 +68,6 @@ export const EventsPageQuery = graphql`
             end_date_as_string: end_date(formatString: "Do MMMM YYYY")
             country
             city
-            path
           }
           excerpt
         }
