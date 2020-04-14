@@ -28,3 +28,9 @@ This is a conference about Maecenas sed diam eget risus varius blandit sit amet 
 The list of pull requests will be reviewed daily and deployed.
 
 Any questions, email mark@annertech.com
+
+## Notes to Self
+To deploy a new addEventLister site:
+- Create new repo using ael-base as template
+- Rename `src/data/site-variables/example.site-variables.md` to `src/data/site-variables.site-variables.md`
+- Edit the new site variables
