@@ -13,6 +13,8 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 import GlobalCssVariables from "./global-styles/global-css-variables.js"
+import Search from "./search"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,6 +23,9 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
         }
+      }
+      siteSearchIndex {
+        index
       }
     }
   `)
@@ -40,7 +45,11 @@ const Layout = ({ children }) => {
           padding: `0 1rem 1.5rem`,
         }}
       >
-        <main>{children}</main>
+        
+        <main>
+          <Search searchIndex={data.siteSearchIndex.index} />
+          {children}
+        </main>
         
       </div>
 

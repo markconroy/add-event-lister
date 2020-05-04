@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Mark Conroy <mark@mark.ie>",
   "dependencies": {
+    "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",

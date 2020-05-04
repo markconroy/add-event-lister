@@ -35,6 +35,25 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-offline`,
     {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        // Fields to index
+        fields: [`title`, `start_date`, `end_date`, `city`, `country`, `description`],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            start_date: node => node.frontmatter.start_date,
+            end_date: node => node.frontmatter.end_date,
+            city: node => node.frontmatter.city,
+            country: node => node.frontmatter.country,
+            description: node => node.html
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
